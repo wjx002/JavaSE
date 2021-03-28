@@ -1,6 +1,8 @@
 package com.oop;
 
 
+import com.oop.demo05.A;
+import com.oop.demo05.B;
 import com.oop.demo05.Student;
 
 /**
@@ -8,11 +10,22 @@ import com.oop.demo05.Student;
  * @date:2021/3/23 - 20:29
  */
 public class Application {
+    //静态的方法和非静态的方法区别很大
+    //
     public static void main(String[] args) {
 
 
-        Student student1 = new Student();
-        student1.say();
+//        Student student1 = new Student();
+//        student1.say();
+        //静态方法：方法的调用只和左边，定义的数据类型有关
+        //非静态方法：才可以重写，重写只能重写public
+        //重写只存在于父子继承中
+        A a = new A();
+        a.test();
+        //父类的引用指向了子类
+        B b = new A();
+        b.test();
+
 
     }
 
