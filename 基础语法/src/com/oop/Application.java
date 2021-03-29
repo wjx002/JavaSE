@@ -6,6 +6,7 @@ import com.oop.demo05.B;
 import com.oop.demo06.Person;
 import com.oop.demo06.Student;
 import com.oop.demo06.Teacher;
+import com.oop.demo10.Outer;
 
 /**
  * @Author:吴家旭
@@ -16,19 +17,12 @@ public class Application {
     //
     public static void main(String[] args) {
 
-        //类型之间的转化： 父        子
-        //高    低
-        Person obj = new Student();
+//
 
-        //student这个对象转换为Student类型，我们就可以使用Student的方法了
-
-//        Student student = (Student) obj;
-        ((Student) obj).go();
-
-        //子类转换为父类，可能丢失本来自己的一些方法
-        Student student = new Student();
-        Person person = student;
-
+        Outer outer = new Outer();
+        //通过这个外部类来实例化内部类
+        Outer.Inner inner = outer.new Inner();
+        inner.getId();
 
     }
 
@@ -122,3 +116,16 @@ public class Application {
 //                System.out.println(student instanceof Object);//true
 //System.out.println(student instanceof Teacher);//编译报错
 //System.out.println(person instanceof String);//编译报错！
+
+//类型之间的转化： 父        子
+//        //高    低
+//        Person obj = new Student();
+//
+//        //student这个对象转换为Student类型，我们就可以使用Student的方法了
+//
+////        Student student = (Student) obj;
+//        ((Student) obj).go();
+//
+//        //子类转换为父类，可能丢失本来自己的一些方法
+//        Student student = new Student();
+//        Person person = student;
